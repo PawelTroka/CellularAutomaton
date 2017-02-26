@@ -79,7 +79,7 @@ namespace CellularAutomaton
                     for (var i = 0; i < MaxState + 1; i++)
                         neighborsInState[i] = CountNeighborsInState(x, y, i);
 
-                    //tutaj zasady ewolucji stanow
+                    //here are going rules of evolution of states
 
                     switch (Rule)
                     {
@@ -144,40 +144,40 @@ namespace CellularAutomaton
                         case Rules.HeatTransfer:
                             switch (_cells[x, y].State)
                             {
-                                case 0: //pustka (slabo przewodzi)
+                                case 0: //empty (weak conductor)
                                     if (neighborsInState[2] >= 3 && neighborsInState[2] > neighborsInState[3])
                                         _cells[x, y].State = 2;
                                     else if (neighborsInState[3] >= 3 && neighborsInState[3] > neighborsInState[2])
                                         _cells[x, y].State = 3;
                                     break;
 
-                                case 1: //przewodnik
-                                    if (neighborsInState[2] > neighborsInState[3]) //cieplo jest
-                                        _cells[x, y].State = 2; //staje sie cieply
-                                    else if (neighborsInState[2] < neighborsInState[3]) //zimno jest
-                                        _cells[x, y].State = 3; //staje sie zimny
+                                case 1: //conductor
+                                    if (neighborsInState[2] > neighborsInState[3]) //it's warm
+                                        _cells[x, y].State = 2; //it's becoming warm
+                                    else if (neighborsInState[2] < neighborsInState[3]) //it's cold
+                                        _cells[x, y].State = 3; //it's becoming cold
                                     break;
 
-                                case 2: //ciepło
+                                case 2: //warm
                                     if (neighborsInState[1] >= 2)
                                         _cells[x, y].State = 0;
-                                    else if (neighborsInState[3] >= neighborsInState[2] + 1) //jest dosyć zimno
-                                        _cells[x, y].State = 0; //więc wytraciło swoje ciepło (ale nie jest zimne)
+                                    else if (neighborsInState[3] >= neighborsInState[2] + 1) //it's kind of cold
+                                        _cells[x, y].State = 0; //it became colder (but it's not really cold yet)
                                     else if (neighborsInState[2] < 3)
                                         _cells[x, y].State = 0;
                                     break;
 
-                                case 3: //zimno
+                                case 3: //cold
                                     if (neighborsInState[1] >= 2)
                                         _cells[x, y].State = 0;
-                                    else if (neighborsInState[3] + 1 <= neighborsInState[2]) //jest dosyć ciepło
-                                        _cells[x, y].State = 0; //więc się ogrzało (ale nie jest ciepłe)
+                                    else if (neighborsInState[3] + 1 <= neighborsInState[2]) //it's kind of warm
+                                        _cells[x, y].State = 0; //it became warmer (but it's not really warm yet)
                                     else if (neighborsInState[3] < 3)
                                         _cells[x, y].State = 0;
 
                                     break;
 
-                                case 4: //przegroda
+                                case 4: //isolator
                                     break;
                             }
                             break;
@@ -235,23 +235,23 @@ namespace CellularAutomaton
                         case Rules.Wireworld:
                             switch (_cells[x, y].State)
                             {
-                                case 0: //pustka, nic sie nie dzieje
+                                case 0: //empty, nothing happens
                                     break;
 
-                                case 1: //przewodnik
+                                case 1: //conductor
                                     if (neighborsInState[2] == 1 || neighborsInState[2] == 2)
                                         _cells[x, y].State = 2;
                                     break;
 
-                                case 2: //głowa elektronu
+                                case 2: //head of electron
                                     _cells[x, y].State = 3;
                                     break;
 
-                                case 3: //ogon elektronu
+                                case 3: //tail of electron
                                     _cells[x, y].State = 1;
                                     break;
 
-                                case 4: //izolator
+                                case 4: //isolator
                                     break;
                             }
                             break;
@@ -289,9 +289,9 @@ namespace CellularAutomaton
 
             for (var ix = -1; ix < 2; ix++)
             for (var iy = -1; iy < 2; iy++)
-                if (!(ix == 0 && iy == 0)) //nie liczymy środka
+                if (!(ix == 0 && iy == 0)) //we are not counting cell in the middle
                     if (x + ix >= 0 && x + ix < _xCellsCount && y + iy >= 0 && y + iy < _yCellsCount)
-                        //nie wychodzimy poza tablice
+                        //we are not going out of array
                         if (_cellsCopy[x + ix, y + iy].State == state)
                             count++;
             return count;
