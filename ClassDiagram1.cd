@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="SI_projekt.Cell">
+    <Position X="5.75" Y="8" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAYAIAAAAACAAAAEAAAACEAAAAAAAAFAA=</HashCode>
+      <FileName>Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SI_projekt.CellularAutomaton">
+    <Position X="5.75" Y="1.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>QAMAAIiACEAAQBoEAAAAYAgCAAAQAAQAAAgBAAEBAEA=</HashCode>
+      <FileName>CellularAutomaton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SI_projekt.GUI">
+    <Position X="0.5" Y="1.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>BIgAgb0xECAEIAAAgkSBCAICBAQAAIEQgAEAQAAgAAE=</HashCode>
+      <FileName>GUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SI_projekt.Program">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SI_projekt.BaseCellShape">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SI_projekt.Properties.Resources">
+    <Position X="9.5" Y="8" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SI_projekt.Properties.Settings">
+    <Position X="11" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SI_projekt.Rules">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACQgAAQAAAAAAAQAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Rules.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
